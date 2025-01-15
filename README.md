@@ -1,3 +1,3 @@
 # Blind-Box in C++
 
-A Container with O(1) random insert / get / erase
+A Container random insert / get / erase in with O(1)
