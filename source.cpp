@@ -16,8 +16,9 @@ public:
 
 static UniformDistribution<float> uniform(0.f, 1.f);
 
+// Blind Box
 template <typename dtype>
-class NBox {
+class BlindBox {
     size_t Length;
     std::vector<dtype> data;
     UniformDistribution<float>& dist = uniform;
@@ -26,12 +27,9 @@ class NBox {
     }
 public:
 
-    NBox(const std::vector<dtype>& _init_Data = {}) : data(_init_Data) {
+    BlindBox(const std::vector<dtype>& _init_Data = {}) : data(_init_Data) {
         Length = data.size();
     }
-    NBox(const NBox& _box) = delete;
-    NBox(NBox&& __box) = delete;
-    NBox& operator = (const NBox& _box) = delete;
 
     const std::vector<dtype>& All() const { return data; }
     size_t size() const { return Length; }
